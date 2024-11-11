@@ -1,3 +1,4 @@
+
 import streamlit as st
 from selenium.webdriver import Remote, ChromeOptions
 from selenium.webdriver.chromium.remote_connection import ChromiumRemoteConnection
@@ -394,7 +395,7 @@ def process_chunk(chunk, parse_description):
 
 # Set page configuration
 st.set_page_config(
-    page_title="Advanced Web Scraper",
+    page_title="Advanced AI Web Scraper",
     page_icon="🕷️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -593,7 +594,6 @@ def main():
             st.metric(label="Success Rate", value="100%", delta="↑")
     
     # Main content area
-    st.markdown("<div class='input-container'>", unsafe_allow_html=True)
     
     # URL Input and Scrape button
     url_col, button_col = st.columns([3, 1])
@@ -606,7 +606,6 @@ def main():
     with button_col:
         scrape_button = st.button('🚀 Scrape', use_container_width=True)
     
-    st.markdown("</div>", unsafe_allow_html=True)
     
     # Handle scraping
     if scrape_button:
@@ -628,11 +627,11 @@ def main():
                     """, unsafe_allow_html=True)
                     
                     # Results container
-                    st.markdown("<div class='results-container'>", unsafe_allow_html=True)
+                    
                     st.markdown("### 📄 Scraped Content")
                     with st.expander("View raw content", expanded=False):
                         st.code(clean_content, language="html")
-                    st.markdown("</div>", unsafe_allow_html=True)
+                  
                 else:
                     st.markdown("""
                         <div class="status-message error">
@@ -642,7 +641,7 @@ def main():
     
     # Extraction section
     if 'dom_content' in st.session_state:
-        st.markdown("<div class='input-container'>", unsafe_allow_html=True)
+       
         st.markdown("### 🎯 Extract Information")
         
         extract_col, extract_button_col = st.columns([3, 1])
@@ -657,7 +656,7 @@ def main():
         with extract_button_col:
             extract_button = st.button('📥 Extract', use_container_width=True)
         
-        st.markdown("</div>", unsafe_allow_html=True)
+      
         
         if extract_button:
             if parse_description:
@@ -671,10 +670,10 @@ def main():
                     
                     if all_tables:
                         final_table = merge_tables(all_tables)
-                        st.markdown("<div class='results-container'>", unsafe_allow_html=True)
+                        
                         st.markdown("### 📋 Extracted Data")
                         st.write(markdown_table_to_df(final_table))
-                        st.markdown("</div>", unsafe_allow_html=True)
+                      
                     else:
                         st.markdown("""
                             <div class="status-message error">
