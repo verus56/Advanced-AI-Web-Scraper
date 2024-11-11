@@ -1,6 +1,7 @@
 # 🕷️ Advanced AI Web Scraper
 
 An intelligent web scraping application built with Streamlit that combines automated web scraping with AI-powered data extraction. The application uses Selenium for web scraping, Groq LLM for intelligent data parsing, and presents a user-friendly interface for extracting structured data from websites.
+You can test it here: [Demo Link](https://web-scraper1924.streamlit.app/)
 
 ## 🌟 Features
 
@@ -88,6 +89,8 @@ The application provides several configurable parameters:
 - Expandable content sections
 - Error handling with visual feedback
 - Interactive data tables
+![AIweb](https://github.com/verus56/Advanced-AI-Web-Scraper/blob/main/web11.png)
+![AIweb2](https://github.com/verus56/Advanced-AI-Web-Scraper/blob/main/web2.png)
 
 ## 🛠️ Advanced Features
 
